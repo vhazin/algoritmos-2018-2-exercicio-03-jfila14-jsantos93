@@ -51,20 +51,20 @@ void addlista( struct fila *lista, int add){
     return;
 }
 
-iint main(void) {
+int main(void) {
     fila *copa = criarfila();
     int n = 0, m = 0;
     int i, j;
-    int identificador;
+    int id;
     scanf("%d",&n);
     for (i = 0; i < n; i++) {
-        scanf("%d",&identificador);
-        addlista(copa, identificador);
+        scanf("%d",&id);
+        addlista(copa, id);
     }
     scanf("%d", &m);
     for (j = 0; j < m; j++) {
-        scanf("%d", &identificador);
-        deletelista(copa, identificador);
+        scanf("%d", &id);
+        deletelista(copa, id);
     }
     pessoa *filafinal = copa -> primeiro;
     int fim = n - m;
