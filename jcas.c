@@ -17,7 +17,6 @@ typedef struct fila{
 };
 
 
-
 void deletelista (struct fila *lista, int del){
     struct pessoa *anterior = NULL, *auxiliar;
     auxiliar = lista -> primeiro;
@@ -54,17 +53,18 @@ void addlista( struct fila *lista, int add){
 
 iint main(void) {
     fila *copa = criarfila();
-    int n = 0, m = 0, i, j;
+    int n = 0, m = 0;
+    int i, j;
     int identificador;
     scanf("%d",&n);
     for (i = 0; i < n; i++) {
         scanf("%d",&identificador);
-        entrarfila(copa, identificador);
+        addlista(copa, identificador);
     }
     scanf("%d", &m);
     for (j = 0; j < m; j++) {
         scanf("%d", &identificador);
-        sairdafila(copa, identificador);
+        deletelista(copa, identificador);
     }
     pessoa *filafinal = copa -> primeiro;
     int fim = n - m;
